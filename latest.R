@@ -13,13 +13,13 @@ library(cartography)
 library(ggplot2)
 library(dummies)
 
-MPApolygon <- readOGR("/Users/ashishu/Documents/Work/Coral Reef/Sample Data/WDPA_June2017_IDN-shapefile/WDPA_June2017_IDN-shapefile-polygons.shp")
+MPApolygon <- readOGR("WDPA_June2017_IDN-shapefile/WDPA_June2017_IDN-shapefile-polygons.shp")
 leaflet(MPApolygon) %>%
   addPolygons(color = "blue", weight = 1, smoothFactor = 0.5,
               opacity = 1.0, fillOpacity = 0.2)
 # IMPORTING THE DATA FROM THE CSV 
-df_Benthic = read.csv("/Users/ashishu/Documents/Work/Coral Reef/Sample Data/Kofiau.BenthicData.csv", quote="")
-df_Fish1 = read.csv("/Users/ashishu/Documents/Work/Coral Reef/Sample Data/Kofiau.FishData.csv", quote="")
+df_Benthic = read.csv("Kofiau.BenthicData.csv", quote="")
+df_Fish1 = read.csv("Kofiau.FishData.csv", quote="")
 
 #Clean up Benthic Data
 df_Benthic <- na.omit(df_Benthic)
